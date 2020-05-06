@@ -1,0 +1,205 @@
+<RectangularElevationButton>:
+	size_hint: (0.44, 0.09)
+	elevation : 8
+	md_bg_color : (1, 1, 1, 1)
+	text_color : rgba('#9370DB')
+
+<TodayScreenElevationButton>:
+	#size_hint : (0.4, 0.25)
+	width: dp(100)
+	height : dp(100)
+	elevation : 10
+	md_bg_color : (1, 1, 1, 1)
+	text_color : rgba('#FFC7B8F5')
+
+<RectangularElevationListItem>:
+	md_bg_color : (1, 1, 1, 1)
+	size_hint: (0.9, None)
+	elevation : 8
+
+FloatLayout:
+	MDBottomNavigation:
+
+		# Today Screen.
+
+		MDBottomNavigationItem:
+			name : 'today'
+			text : 'Today'
+			icon : 'calendar-month-outline'
+			canvas:
+				Color:
+					rgba : rgba('#FFC7B8F5')
+				RoundedRectangle:
+					size : self.size
+					pos : self.pos
+				Color:
+					rgba : (1, 1, 1, 1)
+				RoundedRectangle:
+					size : self.size[0], self.size[1] - 0.45*self.size[1]
+			Image :
+				source: 'icons/undraw_pilates_gpdb.png'
+				size_hint: (0.9, 0.8)
+				pos_hint : {'center_x' : 0.3, 'center_y' : 0.78}
+			MDLabel:
+				text : 'Good Morning Aryan'
+				font_style : 'H6'
+				pos_hint : {'x' : 0.06, 'center_y' : 0.855}
+				size_hint: (0.55, None)
+			MDFloatingActionButton:
+				icon : 'menu'
+				md_bg_color : rgba('#FF817DC0')
+				size_hint: (None, None)
+				elevation : dp(1)
+				pos : root.width - 1.5*self.width, root.height - 2.2*self.height
+			MDTextFieldRound:
+				hint_text : 'search'
+				icon_left : 'magnify'
+				size_hint: (0.6, 0.06)
+				pos_hint: {'x': 0.1, 'center_y' : 0.725}
+				color_mode : 'custom'
+				normal_color : (1, 1, 1, 1)
+				active_color : (1, 1, 1, 1)
+			
+			# first button
+			
+			TodayScreenElevationButton:
+				pos_hint : {'center_x' : 0.25, 'center_y' : 0.515}
+			Image:
+				source: 'icons/muscle.png'
+				size_hint: (0.18, 0.18)
+				pos_hint: {'center_x' : 0.25, 'center_y' : 0.54}
+			MDLabel:
+				text : 'Diet Recommendation'
+				font_size: '8sp'
+				size_hint: (0.22, None)
+				pos_hint: {'x' : 0.172, 'center_y' : 0.46}
+			
+			# Second button
+			
+			TodayScreenElevationButton:
+				pos_hint : {'center_x' : 0.75, 'center_y' : 0.515}
+			Image:
+				source: 'icons/fitness.png'
+				size_hint: (0.2, 0.2)
+				pos_hint: {'center_x' : 0.75, 'center_y' : 0.54}
+			MDLabel:
+				text : 'Exercises'
+				font_size: '8sp'
+				size_hint: (0.22, None)
+				pos_hint: {'x' : 0.69, 'center_y' : 0.46}
+			
+			# Third button
+			
+			TodayScreenElevationButton:
+				pos_hint : {'center_x' : 0.25, 'center_y' : 0.24}
+			Image:
+				source: 'icons/lotus.png'
+				size_hint: (0.2, 0.2)
+				pos_hint: {'center_x' : 0.25, 'center_y' : 0.28}
+			MDLabel:
+				text : 'Meditation'
+				font_size: '8sp'
+				size_hint: (0.22, None)
+				pos_hint: {'x' : 0.18, 'center_y' : 0.20}
+			
+			# Fourth button
+			
+			TodayScreenElevationButton:
+				pos_hint : {'center_x' : 0.75, 'center_y' : 0.24}
+			Image:
+				source: 'icons/pose.png'
+				size_hint: (0.2, 0.2)
+				pos_hint: {'center_x' : 0.75, 'center_y' : 0.272}
+			MDLabel:
+				text : 'Yoga'
+				font_size: '8sp'
+				size_hint: (0.26, None)
+				pos_hint: {'x' : 0.72, 'center_y' : 0.20}
+		
+		# Exercise Screen.
+
+		MDBottomNavigationItem:
+			name : 'all exercises'
+			text : 'all exercises'
+			font_size: '4sp'
+			icon : 'dumbbell'
+			canvas:
+				Color:
+					rgba : rgba('#c2c3dc')
+				RoundedRectangle:
+					size : self.size
+					pos : self.pos
+				Color:
+					rgba : (1, 1, 1, 1)
+				RoundedRectangle:
+					size : self.size[0], self.size[1] - 0.55*self.size[1]
+					pos : self.pos
+			Image:
+				source: 'icons/meditation_bg.png'
+				#size_hint: (1, 1)
+				size_hint_y: 0.4
+				pos_hint: {'center_x': 0.5, 'center_y' : 0.808}
+			MDTextFieldRound:
+				size_hint: (None, 0.06)
+				icon_left : 'magnify'
+				pos_hint: {'center_x' : 0.25, 'center_y': 0.67}
+				hint_text : 'search'
+				color_mode : 'custom'
+				normal_color : (1, 1, 1, 1)
+				color_active : (1, 1, 1, 1)
+			MDLabel:
+				text : 'Meditation'
+				font_style : 'H4'
+				pos_hint: {'x': 0.06, 'center_y' : 0.9}
+			MDLabel:
+				text : '3-10 Min Course'
+				font_style : 'Caption'
+				pos_hint : {'x' : 0.06, 'center_y' : 0.83}
+			MDLabel:
+				text : 'Live happier and healthier by learning the fundamentals of Meditation and mindfulness'
+				font_style : 'Body2'
+				font_size: '9sp'
+				size_hint: (0.55, None)
+				pos_hint : {'x' : 0.06, 'center_y' : 0.76}
+			RectangularElevationButton:
+				text : 'Session 1'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.26, 'center_y' : 0.559}
+			RectangularElevationButton:
+				text : 'Session 2'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.75, 'center_y' : 0.559}
+			RectangularElevationButton:
+				text : 'Session 3'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.26, 'center_y' : 0.449}
+			RectangularElevationButton:
+				text : 'Session 4'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.75, 'center_y' : 0.449}
+			RectangularElevationButton:
+				text : 'Session 5'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.26, 'center_y' : 0.339}
+			RectangularElevationButton:
+				text : 'Session 6'
+				icon : 'play-circle-outline'
+				pos_hint : {'center_x' : 0.75, 'center_y' : 0.339}
+			MDLabel:
+				text : 'Meditation'
+				pos_hint: {'x' : 0.06, 'center_y': 0.235}
+			RectangularElevationListItem:
+				text : 'Alien'
+				secondary_text : 'blah blah blah...'
+				pos_hint: {'x': 0.06, 'center_y' : 0.135}
+				IconLeftWidget:
+					icon : 'icons/icons8-andorian-head-100.png'
+				IconRightWidget:
+					icon : 'lock-outline'
+
+		# This screen is going to be empty for now.
+
+		MDBottomNavigationItem:
+			name : 'settings'
+			text : 'Settings'
+			icon : 'settings-outline'
